@@ -1,0 +1,10 @@
+-r test.txt
+
+django-debug-toolbar==1.7
+django-debug-toolbar-line-profiler==0.6.1
+django-extensions==1.7.7
+line-profiler==2.0
+vmprof
+
+# Patched Python3 compatible line_profiler (For local development only)
+# -e hg+https://bitbucket.org/kmike/line_profiler@7999f21cafbe00950070c8ff0fd8f029d8e90996#egg=line_profiler
