@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Release</title>
+        <style>
+            div.a1 {
+                    width: 1500px;
+                    padding: 25px;
+                    box-sizing: border-box;
+                    background-color: white;
+                    color:  black;
+                    margin: auto;
+            }
+            
+        </style>
+    
+    {% block javascript %}
+    {% endblock %}
+
+    </head>
+    <body>
+        <h1 style="text-align: center;">
+        <a href="/release/">FILE UPLOAD</h1></a>
+        {% block content %}
+            <div class="a1">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button style="margin-left: 10px;"type="submit">Preview</button>
+            </form>
+            </div>
+        {% endblock %}
+
+        {% block preview %}
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        {% endblock %}
+
+    </body>
+    
+</html>

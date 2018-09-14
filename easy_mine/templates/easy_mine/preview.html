@@ -1,0 +1,63 @@
+{% extends 'easy_mine/release.html' %}
+{% block javascript %}
+  <!-- <script>
+      $(document).ready(function(){
+    $("#b").click(function () {
+        alert("hhh");
+      
+
+    //   $.ajax({
+    //     url: "release/move",
+    //     type: "POST",
+    //     data: {
+    //       'file_data': file_data
+    //     },
+    //     dataType: 'json',
+    //     success: function (data) {
+    //     }
+    //   });
+
+    });
+      });
+  </script> -->
+{% endblock %}
+
+{% block preview %}
+
+<h3>Files to be uploaded are: </h3>
+<div class="p1" style="white-space: pre-line">
+     
+    <h3>Modified Files: {{ count_modified_files }} </h3>
+    {% for file in modified_list %}
+        {{ file }}
+    {% endfor %}   
+    <h3>Newly Added files: {{ count_new_files }} </h3>
+    {% for data in addnew_list %}
+        {{ data }}
+    {% endfor %}   
+</div>
+
+<!-- <div>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+
+</div> -->
+
+<form method="post" name="move" action="{% url 'movefile' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+<input type="hidden" id="file" name="file_data" value="{{ str_full_list }}">
+<input type="hidden" id="target" name="target" value="{{ target }}">
+<p style="color:red;">Are you sure you want to move these files?
+<button style="margin-left: 10px;"type="submit" id="b">Yes</button>
+</form>
+<a href="/release/"><button style="margin-left: 10px;"type="submit">No</button></p></a> 
+ 
+{% endblock %}

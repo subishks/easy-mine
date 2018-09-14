@@ -1,0 +1,19 @@
+   A CorePlatform/Common/DataManager/SettlementDL.py
+   M CorePlatform/Common/DataManager/ReplicaHelperDA.py
+   M CorePlatform/DataAccessManager/IssueTrackerReplicaDA/TicketDA.py
+   M CorePlatform/Sites/VTRACK/templates/VTRACK/baseTemplate.html
+   M CorePlatform/EventMailNotification/NewActionSummaryBL.py
+   M CorePlatform/EventMailNotification/NewActionSummaryExtranetWorker.py
+   M CorePlatform/EventMailNotification/templates/EventMailNotification/newActionSummary_35.html
+   M CorePlatform/Common/BizManager/ClassActionBL.py
+   M CorePlatform/Common/DTO/SettlementDTO.py
+   M CorePlatform/Common/DataManager/PortfolioPositionOverrideDL.py
+   M CorePlatform/Common/DataManager/SettlementDL.py
+   M CorePlatform/DataAccessManager/ConferoReplicaDA/PortfolioPositionOverrideDA.py
+   M CorePlatform/Sites/BFA3849/ClassActionBL.py
+   M CorePlatform/Sites/BFA3849/SettlementsBL.py
+   M CorePlatform/Sites/BFA3849/settings.py
+   M CorePlatform/Sites/BFA3849/templates/BFA3849/caseHome.html
+
+
+   A CorePlatform/Common/DataManager/SettlementDL.py
