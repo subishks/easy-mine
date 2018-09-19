@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Ticket Details</title>
+        <style>
+        </style>
+        <h1 style="text-align: center;">TICKET DETAILS</h1>
+    </head>
+    <body>
+            {% block content %}
+            <div class="ticket-details">
+                    <a href="{% url 'ticket_add' %}">+ Add new Ticket</a>
+                {% for ticket in object_list %}
+                    <h4><li><a href="{% url 'ticket_detail' ticket.pk %}">{{ ticket.ticket_title }}</a></li></h4>
+                    {{ ticket.ticket_details }}
+                {% endfor %}
+            </div>
+            {% endblock content %}
+    </body>
+</html>

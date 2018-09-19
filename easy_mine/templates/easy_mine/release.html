@@ -21,6 +21,7 @@
         <h1 style="text-align: center;">
         <a href="/release/">FILE UPLOAD</h1></a>
         {% block content %}
+        <a href="{% url 'home' %}"> Home</a>
             <div class="a1">
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
