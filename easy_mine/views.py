@@ -1,18 +1,17 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import UploadFileForm 
-from django.contrib import messages
 from django.conf import settings
-from shutil import copyfile
-import shutil
-import os
+import shutil, os
+from django.views.generic import ListView, CreateView, UpdateView, DetailView
+from .models import Project, Status, Type, Ticket
+from django.urls import reverse_lazy
 
 
 def upload_file(request):
     """ function for file_upload form and
          to show the data inside the file
     """
-
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         target = request.POST.get('target')
@@ -104,4 +103,22 @@ def movefile(request):
                       }
                      )
 
-   
+class TicketCreateView(CreateView):
+    model = Ticket
+    template_name = 'easy_mine/ticket_form.html'
+    fields = '__all__'
+    success_url = reverse_lazy('home')
+
+
+class TicketListView(ListView):
+    model = Ticket
+    context_object_name = 'tickets'
+    template_name = 'easy_mine/home.html'
+    
+
+class TicketDetailView(DetailView):
+    model = Ticket
+    # ticket_value = request.GET['param_name']
+    template_name = 'easy_mine/ticket_detail.html'
+
+        

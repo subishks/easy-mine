@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Ticket Details</title>
+        <style>
+        </style>
+        <h1 style="text-align: center;">TICKET DETAILS</h1>
+    </head>
+    <body>
+        {% block content %}
+        <a href="{% url 'home' %}"> Home</a>
+        <a href="{% url 'ticket_add' %}">+ Add new Ticket</a>
+        <div class="ticket-details">
+            <h2>Ticket - {{ ticket.ticket_title }}</a></h2>
+            <p>Details - {{ ticket.ticket_details }}</p>
+            <p>Project - {{ ticket.project_id }}</p>
+            <p>Status - {{ ticket.status_id }}</p>
+            <p>Type - {{ ticket.type_id }}</p>
+            <a href="{% url 'upload_file' %}">+ Add Files</a>
+        </div>
+        {% endblock content %}
+    </body>
+</html>

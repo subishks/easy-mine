@@ -37,20 +37,6 @@
     {% endfor %}   
 </div>
 
-<!-- <div>
-    {% if messages %}
-    {% for message in messages %}
-    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      {{ message }}
-    </div>
-  {% endfor %}
-{% endif %}
-
-</div> -->
-
 <form method="post" name="move" action="{% url 'movefile' %}" enctype="multipart/form-data">
     {% csrf_token %}
 <input type="hidden" id="file" name="file_data" value="{{ str_full_list }}">
